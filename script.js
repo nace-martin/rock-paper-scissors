@@ -11,6 +11,21 @@ function getComputerChoice() {
 console.log(getComputerChoice);
 
 // Step 3. Create a function that prompts the user to choose an option from the array
+
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    console.log("It's TIE");
+  } else if (
+    (playerSelection === "Paper" && computerSelection === "Rock") ||
+    (playerSelection === "Scissors" && computerSelection === "Paper") ||
+    (playerSelection === "Rock" && computerSelection === "Scissors")
+  ) {
+    console.log("You Win!");
+  } else {
+    console.log("You Lost");
+  }
+}
+
 // Step 4. Next determine the outcome of the game ie winner/loser/draw
 // Step 5. Create a function that plays a single round and determines if the player won/lost/drawn
 //          and output a string like "You lost: Paper beats Rock"
