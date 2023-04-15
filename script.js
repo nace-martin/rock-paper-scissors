@@ -8,26 +8,37 @@ function getComputerChoice() {
   let random = Math.floor(Math.random() * options.length);
   return options[random];
 }
-console.log(getComputerChoice);
-
-// Step 3. Create a function that prompts the user to choose an option from the array
+// Step 3. Create a function that plays a round and prompts the user to choose an
+//          option from the array
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    console.log("It's TIE");
+    return "It's TIE";
   } else if (
     (playerSelection === "Paper" && computerSelection === "Rock") ||
     (playerSelection === "Scissors" && computerSelection === "Paper") ||
     (playerSelection === "Rock" && computerSelection === "Scissors")
   ) {
-    console.log("You Win!");
+    return `You Win! ${playerSelection} beats ${computerSelection}`;
   } else {
-    console.log("You Lost");
+    return `You lose! ${playerSelection} beats ${computerSelection}`;
+  }
+}
+let playerSelection = "Paper";
+let computerSelection = getComputerChoice();
+// console.log(playRound(playerSelection, computerSelection));
+
+// Step 4. Create a loop that plays the game for 3 rounds and a function that keeps
+//          track of score of both players
+//          - Print the score after each round
+//          - Print the winner of the game after 3 rounds
+
+function game() {
+  for (let i = 0; i < 3; i++) {
+    let playerSelection = prompt("Choose Rock, Paper or Scissors");
+    let computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
   }
 }
 
-// Step 4. Next determine the outcome of the game ie winner/loser/draw
-// Step 5. Create a function that plays a single round and determines if the player won/lost/drawn
-//          and output a string like "You lost: Paper beats Rock"
-// Step 6. Create a loop that plays the game for 3 rounds and function that keeps
-//          score of both players
+console.log(game());
