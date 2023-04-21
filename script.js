@@ -21,24 +21,22 @@ function playRound(playerSelection, computerSelection) {
   ) {
     return `You Win! ${playerSelection} beats ${computerSelection}`;
   } else {
-    return `You lose! ${playerSelection} beats ${computerSelection}`;
+    return `You lose! ${computerSelection}  beats ${playerSelection}`;
   }
 }
-let playerSelection = "Paper";
-let computerSelection = getComputerChoice();
+const playerSelection = "Rock";
+const computerSelection = getComputerChoice();
+
 // console.log(playRound(playerSelection, computerSelection));
 
-// Step 4. Create a loop that plays the game for 3 rounds and a function that keeps
-//          track of score of both players
-//          - Print the score after each round
-//          - Print the winner of the game after 3 rounds
+// Step 4. Create a function that plays the game for 2 rounds
+
+let playerScore = 0;
+let computerScore = 0;
 
 function game() {
-  for (let i = 0; i < 3; i++) {
-    let playerSelection = prompt("Choose Rock, Paper or Scissors");
-    let computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
-  }
+  let result = playRound(playerSelection, computerSelection);
+  if (result === "You Win") {
+    playerScore++;
+  } else if (result === "You lose") computerScore++;
 }
-
-console.log(game());
