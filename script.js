@@ -7,7 +7,7 @@ function getComputerChoice() {
 
 // This Function plays a single round
 
-function playRound() {
+function playRound(playerSelection, computerSelection) {
   let playerSelection = prompt("Choice Rock, Paper or Scissors");
 
   if (!["Rock", "Paper", "Scissors"].includes(playerSelection)) {
@@ -17,16 +17,21 @@ function playRound() {
 
   let computerSelection = getComputerChoice();
   if (playerSelection === computerSelection) {
-    alert(`It\'s a Tie you both choose ${playerSelection}`);
+    return `It\'s a Tie you both choose ${playerSelection}`;
   } else if (
     (playerSelection === "Rock" && computerSelection === "Scissors") ||
     (playerSelection === "Paper" && computerSelection === "Rock") ||
     (playerSelection === "Scissors" && computerSelection === "Paper")
   ) {
-    alert(`You Win ${playerSelection} beats ${computerSelection}`);
+    return `You Win ${playerSelection} beats ${computerSelection}`;
   } else {
-    alert(`You Loose ${computerSelection} beats ${playerSelection}`);
+    return `You Loose ${computerSelection} beats ${playerSelection}`;
   }
 }
 
-playRound();
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+
+  for (let i = 0; i < 5; i++) {}
+}
