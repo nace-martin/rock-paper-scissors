@@ -28,4 +28,18 @@ function game() {
       return `computer`;
     }
   }
+  while (round <= 5) {
+    console.log(`Round ${round}:`);
+    let result = playRound();
+    console.log(
+      `You Chose ${playerSelection}, and the Computer chose ${computerSelection}.`
+    );
+    if (result === "Tie") {
+      console.log(`It's a tie you both chose: ${playerSelection}.`);
+    } else if (result === "player") {
+      console.log(`You won this round`);
+    } else {
+      console.log(`The computer won this round`);
+    }
+  }
 }
