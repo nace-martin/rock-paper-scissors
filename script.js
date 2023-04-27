@@ -50,14 +50,17 @@ function game() {
     }
     round++;
   }
-}
-if (playScore > computerScore) {
-  console.log(`You WIN the game with a score of ${playScore}-${computerScore}`);
-} else if (playScore < computerScore) {
-  console.log(
-    `The computer wins the game with a score of ${computerScore}-${playScore}.`
-  );
-} else {
-  `It's a tied game with a score of ${playScore}-${computerScore}.`;
+
+  if (playScore > computerScore) {
+    console.log(
+      `You WIN the game with a score of ${playScore}-${computerScore}`
+    );
+  } else if (playScore < computerScore) {
+    console.log(
+      `The computer wins the game with a score of ${computerScore}-${playScore}.`
+    );
+  } else {
+    `It's a tied game with a score of ${playScore}-${computerScore}.`;
+  }
 }
 game();
